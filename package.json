@@ -2,8 +2,10 @@
   "name": "react-web",
   "version": "1.0.1",
   "description": "react fundamentals",
-  "main": "App.js",
+
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
