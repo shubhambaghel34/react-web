@@ -1,19 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("h1", { id: "parent" }, [
-//third parameter is attributes for tags
-    React.createElement("div", {}, [
-    React.createElement("h1", {}, "h1 tag here"),
-    React.createElement("h2", {}, "h2 tag"),
-  ]),
-  React.createElement("div", {}, [
-    React.createElement("h1", {}, "h1 tag"),
-    React.createElement("h2", {}, "h2 tag"),
-  ]),
-]);
-const root = ReactDOM.createRoot(document.getElementById("root"));
+//React Element using JSX
 
-console.log(parent);//object
+//(HTML/XML like syntax) where code transpiled before it reaches to JS engine,Parcel=>Babel convert code which understand by JS engine 
+const jsxheading=(<h1>Hello from React js with JSX</h1>)
 
-root.render(parent);
+
+//JSX-->Babel transpile to-->React.createElement==>Reactelement.JS Object => HTMLelement
+const root=ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(jsxheading);
