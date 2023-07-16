@@ -1,0 +1,14 @@
+name: Branchlint
+on: pull_request
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint branch name
+        uses: lekterable/branchlint-action@2.0.0
+        with:
+          allowed: |
+            development
+            /(epic|feat|fix|chore)/DEV-\d{4}/i
+          errorMessage: 'Custom error message'
+          startAfter: '2021-01-01 00:00:00'
