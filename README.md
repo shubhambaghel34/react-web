@@ -21,9 +21,9 @@ URL: https://parceljs.org/
 15. Different dev and prod build
 
 
-`npm` -manages node packages
-`npx parcel filename` -execute specific package on file
-`npx parcel build filename`-create prod buidl and also need to remove entry point from App.js
+# `npm` -manages node packages
+1. `npx parcel filename` -execute specific package on file
+2. `npx parcel build filename`-create prod buidl and also need to remove entry point from App.js
 
 # BroswerList usage#
 URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
