@@ -21,7 +21,7 @@ URL: https://parceljs.org/
 15. Different dev and prod build
 
 
-# `npm` -manages node packages
+# `NPM`
 1. `npx parcel filename` -execute specific package on file
 2. `npx parcel build filename`-create prod buidl and also need to remove entry point from App.js
 
