@@ -1,0 +1,105 @@
+ [{
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "16968",
+                  "name": "PK Biryani House (Kothrud)",
+                  "uuid": "3df7e3ae-b9d2-4714-bed7-b1ec67916f68",
+                  "city": "6",
+                  "area": "Kothrud",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "fkepojauuk2dwkmeefpc",
+                  "cuisines": [
+                    "Biryani",
+                    "Maharashtrian",
+                    "Seafood",
+                    "North Indian"
+                  ],
+                  "tags": [],
+                  "costForTwo": 40000,
+                  "costForTwoString": "₹400 FOR TWO",
+                  "deliveryTime": 28,
+                  "minDeliveryTime": 28,
+                  "maxDeliveryTime": 28,
+                  "slaString": "28 MINS",
+                  "lastMileTravel": 5.599999904632568,
+                  "slugs": {
+                    "restaurant": "pk-biryani-house-kothrud-kothrud",
+                    "city": "pune"
+                  },
+                  "cityState": "6",
+                  "address": "OFFICE NO 1+2 SHOP NO 5+6+7 GR FLOOR HOUSE NO 25A OPP YASHWANTRAO CHAVAN AUDITORIUM KOTHRUD GAONTHAN PUNE 411038, Karve Nagar, Pune , Maharashtra - 411038",
+                  "locality": "Lokmanya Colony",
+                  "parentId": 3260,
+                  "unserviceable": false,
+                  "veg": false,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [],
+                  "ribbon": [
+                    {
+                      "type": "PROMOTED"
+                    }
+                  ],
+                  "chain": [],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 5600,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 5600,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "5600",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "cid=7462912~p=1~eid=00000189-67d3-7906-184a-d90000d9011d~srvts=1689664059654",
+                  "badges": {
+                    "imageBased": [],
+                    "textBased": [],
+                    "textExtendedBadges": []
+                  },
+                  "lastMileTravelString": "5.5 kms",
+                  "hasSurge": false,
+                  "sla": {
+                    "restaurantId": "16968",
+                    "deliveryTime": 28,
+                    "minDeliveryTime": 28,
+                    "maxDeliveryTime": 28,
+                    "lastMileTravel": 5.599999904632568,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": true,
+                  "avgRating": "4.1",
+                  "totalRatings": 10000,
+                  "new": false
+                },
+                "subtype": "basic"
+              }]
