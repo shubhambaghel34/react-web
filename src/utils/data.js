@@ -1,4 +1,4 @@
-const resData = [
+const mockData = [
   {
     type: "restaurant",
     data: {
@@ -1557,4 +1557,4 @@ const resData = [
   },
 ];
 
-export default resData;
+export default mockData;

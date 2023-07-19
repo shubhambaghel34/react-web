@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { CDN_URL } from "../../utils/constant";
 
  RestaurantsCard = (props) => {
-    console.log(props);
+   // console.log(props);
     const { mockData } = props;
     const {
       cloudinaryImageId,

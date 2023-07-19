@@ -63,3 +63,8 @@
     /* background-color: red; */
     margin-left: 15px;
 }
+
+.filter-button{
+    margin: 10px;
+    cursor: pointer;
+}
