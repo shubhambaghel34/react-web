@@ -26,15 +26,15 @@
 .resutrant-card {
     margin: 5px;
     padding: 5px;
-    width: 300px;   
+    width: 300px;
     background-color: #f0f0f0f0;
     box-sizing: border-box;
 
-  width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  flex-wrap: wrap;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    flex-wrap: wrap;
 
 }
 
@@ -56,9 +56,10 @@
     /* padding-right: 5px;
     margin: 5px; */
 }
+
 .body {
-   margin: 0;
-   padding: 0;
-/* background-color: red; */
-margin-left: 15px;
-  }
+    margin: 0;
+    padding: 0;
+    /* background-color: red; */
+    margin-left: 15px;
+}
