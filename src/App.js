@@ -46,6 +46,7 @@ root.render(<AppLayout />);
 // );
 //root.render(headings)
 
+/*structure of App
 /**
  * Header
  *  Logo
