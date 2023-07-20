@@ -38,11 +38,9 @@ const fetchData = async () => {
     .catch((e) => console.error(e));
 };
 
-if(resturants.length == 0){
-    return <Shimmer/>
-}
 
-  return (
+
+  return resturants.length == 0 ?<Shimmer/>:(
     <div className="body">
       <div className="filter">
         <button
