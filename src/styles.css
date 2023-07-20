@@ -68,3 +68,10 @@
     margin: 10px;
     cursor: pointer;
 }
+
+.login-button{
+    padding:0 10px;
+margin: auto;
+    height: 40px;
+    width:50px
+}
