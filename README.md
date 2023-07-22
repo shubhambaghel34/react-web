@@ -48,5 +48,6 @@ UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(
  a.createBrowserrouter is configration and RouterProvider is component imported/written by DOM which need to pass in render
    Ex. root.render(<RouterProvider router={appRouter}/>) where appRouter is configuration of different path with components
    as in createBrowserRouter([{path,element},{path,element}])
- b.errorelement in createBrowserrouter is use to define wildcard/random entry in path  
+ b.`errorelement` in createBrowserrouter is utilize to define wildcard/random entry in path  
  c.Outlet is provided where all children can be push internally by react-DOM
+ d.Link
