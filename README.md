@@ -35,4 +35,6 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 
 UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(body)=>Object==> compares object of two DOM and update actual DOM
 
-3.Shimmer UI
+3. Shimmer UI
+
+4. whenver changes in state variable, react will trigger reconciallation cycle

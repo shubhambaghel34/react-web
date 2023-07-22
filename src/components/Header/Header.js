@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { LOGO_URL } from "../../utils/constant";
 
-Header = () => {
+const Header = () => {
   const [btnName, setbtnName] = useState("Login");
 
   return (

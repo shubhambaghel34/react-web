@@ -65,8 +65,11 @@
 }
 
 .filter-button{
-    margin: 10px;
+    /* margin: 10px; */
     cursor: pointer;
+    display: flex;
+    margin-left: 20px
+   
 }
 
 .login-button{
@@ -74,4 +77,9 @@
 margin: auto;
     height: 40px;
     width:50px
+}
+
+.filter{
+    display: flex;
+    
 }
