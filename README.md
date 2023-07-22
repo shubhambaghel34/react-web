@@ -27,3 +27,14 @@ URL: https://parceljs.org/
 
 # BroswerList usage#
 URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
+
+# ReactHooks
+1. useState--Re-render
+
+2. React--> reconciliation Algo(ReactFiber) 
+
+UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(body)=>Object==> compares object of two DOM and update actual DOM
+
+3. Shimmer UI
+
+4. whenver changes in state variable, react will trigger reconciallation cycle
