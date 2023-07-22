@@ -3,19 +3,69 @@ import ReactDOM from "react-dom/client";
 import "./styles.css";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
+import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
+import AboutUs from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+import Error from "./components/Error/Error";
+import Cart from "./components/Cart/Cart";
+
 
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Main />
+      {/* <Main /> */}
+      <Outlet />
     </div>
   );
 };
+
+//react- router configuration
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Main />
+      },
+      {
+        path: "/about",
+        element: <AboutUs />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      },
+      {
+        path: "/cart",
+        element: <Cart />
+      },
+    ],
+    errorElement: <Error />
+  },
+
+  //single component
+  // {
+  //   path: "/about",
+  //   element: <AboutUs />
+  // },
+  // {
+  //   path: "/contact",
+  //   element: <Contact/>
+  // }
+]);
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+
+//basic app configuration
+//root.render(<AppLayout />);
 
 
+//Render with Router configuration by latest router feature
+root.render(<RouterProvider router={appRouter}/>)
 
 
 

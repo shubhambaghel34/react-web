@@ -39,7 +39,14 @@ UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(
 
 4. whenver changes in state variable, react will trigger reconciallation cycle
 
-5.usEffect
+5. usEffect
  a.it will call whne every component is render if dpendency array is noot provided
  b.it will render once if we pass dependency array
  c.if dependency array has value then it will render only if that value changes  
+
+6. React-Router
+ a.createBrowserrouter is configration and RouterProvider is component imported/written by DOM which need to pass in render
+   Ex. root.render(<RouterProvider router={appRouter}/>) where appRouter is configuration of different path with components
+   as in createBrowserRouter([{path,element},{path,element}])
+ b.errorelement in createBrowserrouter is use to define wildcard/random entry in path  
+ c.Outlet is provided where all children can be push internally by react-DOM

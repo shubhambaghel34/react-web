@@ -2,7 +2,6 @@
   "name": "react-web",
   "version": "1.0.1",
   "description": "react fundamentals",
-
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -28,9 +27,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 versions"
   ]
 }
