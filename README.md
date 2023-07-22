@@ -38,3 +38,8 @@ UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(
 3. Shimmer UI
 
 4. whenver changes in state variable, react will trigger reconciallation cycle
+
+5.usEffect
+ a.it will call whne every component is render if dpendency array is noot provided
+ b.it will render once if we pass dependency array
+ c.if dependency array has value then it will render only if that value changes  
