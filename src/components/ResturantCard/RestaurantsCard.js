@@ -12,7 +12,7 @@ import { CDN_URL } from "../../utils/constant";
       avgRating,
       cuisines,
       deliveryTime,
-    } = mockData?.data;
+    } = mockData?.info;
   
     return (
       <div className="resutrant-card">
@@ -23,8 +23,8 @@ import { CDN_URL } from "../../utils/constant";
         <h3>{name}</h3>
         <h5>{cuisines.join(",")} </h5>
         <h5>{avgRating}</h5>
-        <h5>{costForTwo / 100} for TWO</h5>
-        <h5>{deliveryTime} minutes</h5>
+        <h5>{costForTwo}</h5>
+        {/* <h5>{deliveryTime} minutes</h5> */}
       </div>
     );
   };

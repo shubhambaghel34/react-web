@@ -50,4 +50,5 @@ UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(
    as in createBrowserRouter([{path,element},{path,element}])
  b.`errorelement` in createBrowserrouter is utilize to define wildcard/random entry in path  
  c.Outlet is provided where all children can be push internally by react-DOM
- d.Link
+ d.Link and with 'to' where it will  replace anchor tag  and refreshes the components
+ e.Client Side Routing and Server Side Routing
