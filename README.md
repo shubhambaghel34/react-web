@@ -52,3 +52,16 @@ UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(
  c.Outlet is provided where all children can be push internally by react-DOM
  d.Link and with 'to' where it will  replace anchor tag  and refreshes the components
  e.Client Side Routing and Server Side Routing
+
+7. Class COMPONENT LifeCycle
+
+ a.CONSTRUCTOR->RENDER->ComponentDidmount
+
+ b.CONSTRUCTOR (parent)->RENDER (parent)->Constructor(child)->Render(child)->ComponentDidmount(Child)->ComponentDidMount(Parent)
+
+ c.Child and Parent components
+
+  i.Render phase->Constructor->Render
+ 
+  ii.Commit phase->Update DOM->componentDidMount 
+ 
