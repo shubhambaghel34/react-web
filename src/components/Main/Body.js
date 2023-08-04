@@ -24,13 +24,20 @@ const Body = () => {
     fetch(`${API_URL}`)
       .then((res) => res.json())
       .then((json) => {
-       // console.log(json.data.cards[2].data.data.cards);
-        console.log(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants[0].info);
-       // setResturants(json?.data?.cards[2]?.data?.data?.cards);
-        setResturants(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+        // console.log(json.data.cards[2].data.data.cards);
+        console.log(
+          json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants[0]
+            .info
+        );
+        // setResturants(json?.data?.cards[2]?.data?.data?.cards);
+        setResturants(
+          json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+        );
         //setFilterResturant(json?.data?.cards[2]?.data?.data?.cards);
         //setFilterResturant(json?.data?.cards[2]?.data?.data?.cards);
-        setFilterResturant(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+        setFilterResturant(
+          json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+        );
       })
       .catch((e) => console.error(e));
   };
@@ -67,7 +74,6 @@ const Body = () => {
           className="filter-button"
           onClick={() => {
             const filterList = resturants.filter(
-              
               (res) => res.info.avgRating > 4
             );
             //re-render will happen when state variable changes
@@ -78,8 +84,11 @@ const Body = () => {
         </button>
       </div>
       <div className="resturant-container">
-        {filteredResturants.map((restaurant,idx) => (
-         <Link  key={idx} to={'/restaurants/'+ restaurant.info.id}> <RestaurantsCard  mockData={restaurant} /></Link>
+        {filteredResturants.map((restaurant, idx) => (
+          <Link key={idx} to={"/restaurants/" + restaurant.info.id}>
+            {" "}
+            <RestaurantsCard mockData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
