@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import RestaurantsCard from "../ResturantCard/RestaurantsCard";
 import { API_URL } from "../../utils/constant";
-import mockData from "../../utils/data";
+// import mockData from "../../utils/data";
 import Shimmer from "../Shimmer/Shimmer";
+import { Link } from "react-router-dom";
 
-const Main = () => {
+const Body = () => {
   const [resturants, setResturants] = useState([]);
   const [filteredResturants, setFilterResturant] = useState([]);
   const [searchValue, setSearachValue] = useState("");
@@ -23,9 +24,13 @@ const Main = () => {
     fetch(`${API_URL}`)
       .then((res) => res.json())
       .then((json) => {
-        console.log(json.data.cards[2].data.data.cards);
-        setResturants(json?.data?.cards[2]?.data?.data?.cards);
-        setFilterResturant(json?.data?.cards[2]?.data?.data?.cards);
+       // console.log(json.data.cards[2].data.data.cards);
+        console.log(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants[0].info);
+       // setResturants(json?.data?.cards[2]?.data?.data?.cards);
+        setResturants(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+        //setFilterResturant(json?.data?.cards[2]?.data?.data?.cards);
+        //setFilterResturant(json?.data?.cards[2]?.data?.data?.cards);
+        setFilterResturant(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
       })
       .catch((e) => console.error(e));
   };
@@ -62,7 +67,8 @@ const Main = () => {
           className="filter-button"
           onClick={() => {
             const filterList = resturants.filter(
-              (res) => res.data.avgRating > 4
+              
+              (res) => res.info.avgRating > 4
             );
             //re-render will happen when state variable changes
             setResturants(filterList);
@@ -72,11 +78,11 @@ const Main = () => {
         </button>
       </div>
       <div className="resturant-container">
-        {filteredResturants.map((restaurant) => (
-          <RestaurantsCard key={restaurant.data.id} mockData={restaurant} />
+        {filteredResturants.map((restaurant,idx) => (
+         <Link  key={idx} to={'/restaurants/'+ restaurant.info.id}> <RestaurantsCard  mockData={restaurant} /></Link>
         ))}
       </div>
     </div>
   );
 };
-export default Main;
+export default Body;

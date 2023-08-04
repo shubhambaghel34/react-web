@@ -38,3 +38,30 @@ UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(
 3. Shimmer UI
 
 4. whenver changes in state variable, react will trigger reconciallation cycle
+
+5. usEffect
+ a.it will call whne every component is render if dpendency array is noot provided
+ b.it will render once if we pass dependency array
+ c.if dependency array has value then it will render only if that value changes  
+
+6. React-Router
+ a.createBrowserrouter is configration and RouterProvider is component imported/written by DOM which need to pass in render
+   Ex. root.render(<RouterProvider router={appRouter}/>) where appRouter is configuration of different path with components
+   as in createBrowserRouter([{path,element},{path,element}])
+ b.`errorelement` in createBrowserrouter is utilize to define wildcard/random entry in path  
+ c.Outlet is provided where all children can be push internally by react-DOM
+ d.Link and with 'to' where it will  replace anchor tag  and refreshes the components
+ e.Client Side Routing and Server Side Routing
+
+7. Class COMPONENT LifeCycle
+
+ a.CONSTRUCTOR->RENDER->ComponentDidmount
+
+ b.CONSTRUCTOR (parent)->RENDER (parent)->Constructor(child)->Render(child)->ComponentDidmount(Child)->ComponentDidMount(Parent)
+
+ c.Child and Parent components
+
+  i.Render phase->Constructor->Render
+ 
+  ii.Commit phase->Update DOM->componentDidMount 
+ 

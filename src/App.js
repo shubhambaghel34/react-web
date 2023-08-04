@@ -2,20 +2,75 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles.css";
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import Body from "./components/Main/Body";
+import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
+import AboutUs from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+import Error from "./components/Error/Error";
+import Cart from "./components/Cart/Cart";
+import RestaurantMenu from "./components/ResturantMenu/ResturantMenu";
+
 
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Main />
+      <Outlet />
     </div>
   );
 };
+
+//react- router configuration
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />
+      },
+      {
+        path: "/about",
+        element: <AboutUs />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      },
+      {
+        path: "/cart",
+        element: <Cart />
+      },
+      /**id of restaurant */
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />
+      },
+    ],
+    errorElement: <Error />
+  },
+
+  //single component
+  // {
+  //   path: "/about",
+  //   element: <AboutUs />
+  // },
+  // {
+  //   path: "/contact",
+  //   element: <Contact/>
+  // }
+]);
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+
+//basic app configuration
+//root.render(<AppLayout />);
 
 
+//Render with Router configuration by latest router feature
+root.render(<RouterProvider router={appRouter}/>)
 
 
 
