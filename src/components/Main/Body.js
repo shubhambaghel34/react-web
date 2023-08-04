@@ -67,7 +67,8 @@ const Body = () => {
           className="filter-button"
           onClick={() => {
             const filterList = resturants.filter(
-              (res) => res.data.avgRating > 4
+              
+              (res) => res.info.avgRating > 4
             );
             //re-render will happen when state variable changes
             setResturants(filterList);
