@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { CDN_URL } from "../../utils/constant";
 
- RestaurantsCard = (props) => {
+ const RestaurantsCard = (props) => {
    // console.log(props);
     const { mockData } = props;
     const {

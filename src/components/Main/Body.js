@@ -5,6 +5,7 @@ import { API_URL } from "../../utils/constant";
 // import mockData from "../../utils/data";
 import Shimmer from "../Shimmer/Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Body = () => {
   const [resturants, setResturants] = useState([]);
@@ -21,19 +22,35 @@ const Body = () => {
 
   //fetching data
   const fetchData = async () => {
-    fetch(`${API_URL}`)
+    fetch(API_URL)
       .then((res) => res.json())
       .then((json) => {
-       // console.log(json.data.cards[2].data.data.cards);
-        console.log(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants[0].info);
-       // setResturants(json?.data?.cards[2]?.data?.data?.cards);
-        setResturants(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+        // console.log(json.data.cards[2].data.data.cards);
+        console.log(
+          json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants[0]
+            .info
+        );
+        // setResturants(json?.data?.cards[2]?.data?.data?.cards);
+        setResturants(
+          json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+        );
         //setFilterResturant(json?.data?.cards[2]?.data?.data?.cards);
         //setFilterResturant(json?.data?.cards[2]?.data?.data?.cards);
-        setFilterResturant(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+        setFilterResturant(
+          json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+        );
       })
       .catch((e) => console.error(e));
   };
+
+const onlineStatus=useOnlineStatus();
+
+if(onlineStatus === false){
+  return(
+    <h1>"Opps!, You are not connected to the network."</h1>
+  )
+}
+
 
   return resturants.length == 0 ? (
     <Shimmer />
@@ -67,7 +84,6 @@ const Body = () => {
           className="filter-button"
           onClick={() => {
             const filterList = resturants.filter(
-              
               (res) => res.info.avgRating > 4
             );
             //re-render will happen when state variable changes
@@ -78,8 +94,11 @@ const Body = () => {
         </button>
       </div>
       <div className="resturant-container">
-        {filteredResturants.map((restaurant,idx) => (
-         <Link  key={idx} to={'/restaurants/'+ restaurant.info.id}> <RestaurantsCard  mockData={restaurant} /></Link>
+        {filteredResturants.map((restaurant, idx) => (
+          <Link key={idx} to={"/restaurants/" + restaurant.info.id}>
+            {" "}
+            <RestaurantsCard mockData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
