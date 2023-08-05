@@ -5,6 +5,7 @@ import { API_URL } from "../../utils/constant";
 // import mockData from "../../utils/data";
 import Shimmer from "../Shimmer/Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Body = () => {
   const [resturants, setResturants] = useState([]);
@@ -21,7 +22,7 @@ const Body = () => {
 
   //fetching data
   const fetchData = async () => {
-    fetch(`${API_URL}`)
+    fetch(API_URL)
       .then((res) => res.json())
       .then((json) => {
         // console.log(json.data.cards[2].data.data.cards);
@@ -41,6 +42,15 @@ const Body = () => {
       })
       .catch((e) => console.error(e));
   };
+
+const onlineStatus=useOnlineStatus();
+
+if(onlineStatus === false){
+  return(
+    <h1>"Opps!, You are not connected to the network."</h1>
+  )
+}
+
 
   return resturants.length == 0 ? (
     <Shimmer />

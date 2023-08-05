@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { API_DETAILS_URL } from "./constant";
 
-
 const useRestaurantMenu = (resId) => {
-const[resData,setResData]=useState(null)
+  const [resData, setResData] = useState(null);
 
-    useEffect(() => {
+  useEffect(() => {
     fetchData();
   }, []);
 
