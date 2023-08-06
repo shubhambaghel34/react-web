@@ -23,6 +23,7 @@
   "homepage": "https://github.com/shubhambaghel34/react-web#readme",
   "devDependencies": {
     "parcel": "^2.9.3",
+    "prettier": "3.0.1",
     "process": "^0.11.10"
   },
   "dependencies": {
