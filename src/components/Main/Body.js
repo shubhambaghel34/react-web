@@ -43,30 +43,28 @@ const Body = () => {
       .catch((e) => console.error(e));
   };
 
-const onlineStatus=useOnlineStatus();
+  const onlineStatus = useOnlineStatus();
 
-if(onlineStatus === false){
-  return(
-    <h1>"Opps!, You are not connected to the network."</h1>
-  )
-}
-
+  if (onlineStatus === false) {
+    return <h1>"Opps!, You are not connected to the network."</h1>;
+  }
 
   return resturants.length == 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="input-box"
+            className="border border-solid border-b-slate-200"
             value={searchValue}
             onChange={(e) => {
               setSearachValue(e.target.value);
             }}
           />
           <button
+            className="px-4 py-0.5 bg-green-300 m-4 rounded-md"
             onClick={(e) => {
               //setSearachValue(searchValue);
               // console.log(searchValue);
@@ -80,20 +78,22 @@ if(onlineStatus === false){
             Search
           </button>
         </div>
-        <button
-          className="filter-button"
-          onClick={() => {
-            const filterList = resturants.filter(
-              (res) => res.info.avgRating > 4
-            );
-            //re-render will happen when state variable changes
-            setResturants(filterList);
-          }}
-        >
-          Top Rated Resturant
-        </button>
+        <div className="flex items-center">
+          <button
+            className="px-2 py-0.5 bg-teal-400 rounded-md"
+            onClick={() => {
+              const filterList = resturants.filter(
+                (res) => res.info.avgRating > 4
+              );
+              //re-render will happen when state variable changes
+              setResturants(filterList);
+            }}
+          >
+            Top Rated Resturant
+          </button>
+        </div>
       </div>
-      <div className="resturant-container">
+      <div className="grid grid-cols-5 gap-0">
         {filteredResturants.map((restaurant, idx) => (
           <Link key={idx} to={"/restaurants/" + restaurant.info.id}>
             {" "}

@@ -64,4 +64,23 @@ UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(
   i.Render phase->Constructor->Render
  
   ii.Commit phase->Update DOM->componentDidMount 
- 
+
+8.Suspense/lazy
+ a.Load component on demand and distrubute code  
+ pass Fallaback value if needed
+ b.dynamic import
+
+9.Tailwindcss
+ a.tailwind config
+ b.postcss- will help to write/convert/transpile css in js
+
+
+
+  <!-- <div className=" m-4 p-4 w-[350px] rounded-lg bg-slate-200">
+        <img className="rounded-lg" src={CDN_URL + cloudinaryImageId}></img>
+        <h3 className="font-bold py-2 text-xl">{name}</h3>
+        <h5>{cuisines.join(",")} </h5>
+        <h5>{avgRating}</h5>
+        <h5>{costForTwo}</h5>
+        {/* <h5>{deliveryTime} minutes</h5> */}
+      </div> -->
