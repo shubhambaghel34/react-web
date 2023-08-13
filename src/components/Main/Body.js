@@ -33,6 +33,7 @@ const Body = () => {
           json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants[0]
             .info
         );
+        // console.log("--", json.data.cards);
         // setResturants(json?.data?.cards[2]?.data?.data?.cards);
         setResturants(
           json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
@@ -47,7 +48,7 @@ const Body = () => {
   };
 
   const onlineStatus = useOnlineStatus();
-  console.log("listofRes", JSON.stringify(resturants));
+  //console.log("listofRes:", JSON.stringify(resturants));
   if (onlineStatus === false) {
     return <h1>"Opps!, You are not connected to the network."</h1>;
   }
