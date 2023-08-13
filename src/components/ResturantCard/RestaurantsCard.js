@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { CDN_URL } from "../../utils/constant";
-
+import Star from "../../../resources/star.png";
 const RestaurantsCard = (props) => {
   // console.log(props);
   const { mockData } = props;
@@ -11,18 +11,25 @@ const RestaurantsCard = (props) => {
     costForTwo,
     avgRating,
     cuisines,
-    deliveryTime,
+    totalRatingsString,
   } = mockData?.info;
 
   return (
     <>
-      <div className=" m-4 p-4 w-[350px] rounded-lg bg-slate-200">
+      <div className=" m-4 p-4 w-[350px] rounded-lg bg-slate-100 shadow-lg transition duration-300 transform hover:scale-105">
         <img className="rounded-lg" src={CDN_URL + cloudinaryImageId}></img>
         <h3 className="font-bold py-2 text-xl">{name}</h3>
         <h5>{cuisines.join(",")} </h5>
-        <h5>{avgRating}</h5>
+        <div className="flex">
+          <img src={Star} className="flex w-6 h-6 p-1" />
+          <h5>{avgRating}</h5>
+          {/* <p className="">{totalRatingsString}likes</p> */}
+        </div>
+
         <h5>{costForTwo}</h5>
-        {/* <h5>{deliveryTime} minutes</h5> */}
+        <div className="flex">
+          <p className="">{totalRatingsString}likes</p>
+        </div>
       </div>
     </>
     // <div className="grid gap-4">
@@ -63,6 +70,20 @@ const RestaurantsCard = (props) => {
     //   </div> */}
     // </div>
   );
+};
+
+//HOC
+export const withMenuPromoted = (RestaurantsCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
+          Promoted
+        </label>
+        <RestaurantsCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantsCard;

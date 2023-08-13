@@ -65,15 +65,18 @@ UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(
  
   ii.Commit phase->Update DOM->componentDidMount 
 
-8.Suspense/lazy
+8. Suspense/lazy
  a.Load component on demand and distrubute code  
  pass Fallaback value if needed
  b.dynamic import
 
-9.Tailwindcss
+9. Tailwindcss
  a.tailwind config
  b.postcss- will help to write/convert/transpile css in js
 
+10. HOC
+ a.takes Component as input->return enhance component
+ b.
 
 
   <!-- <div className=" m-4 p-4 w-[350px] rounded-lg bg-slate-200">
