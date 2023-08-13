@@ -1,15 +1,18 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./styles.css";
 import Header from "./components/Header/Header";
 import Body from "./components/Main/Body";
-import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import AboutUs from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Error from "./components/Error/Error";
 import Cart from "./components/Cart/Cart";
 import RestaurantMenu from "./components/ResturantMenu/ResturantMenu";
+import Shimmer from "./components/Shimmer/Shimmer";
+// import Grocery from "./components/Grocery/Grocery";
 
+const Grocery = lazy(() => import("./components/Grocery/Grocery"));
 
 const AppLayout = () => {
   return (
@@ -28,27 +31,41 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />
+        element: <Body />,
       },
       {
         path: "/about",
-        element: <AboutUs />
+        element: <AboutUs />,
       },
       {
         path: "/contact",
-        element: <Contact />
+        element: <Contact />,
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense
+            fallback={
+              <h1>
+                <Shimmer />
+              </h1>
+            }
+          >
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         path: "/cart",
-        element: <Cart />
+        element: <Cart />,
       },
       /**id of restaurant */
       {
         path: "/restaurants/:resId",
-        element: <RestaurantMenu />
+        element: <RestaurantMenu />,
       },
     ],
-    errorElement: <Error />
+    errorElement: <Error />,
   },
 
   //single component
@@ -62,30 +79,13 @@ const appRouter = createBrowserRouter([
   // }
 ]);
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //basic app configuration
 //root.render(<AppLayout />);
 
-
 //Render with Router configuration by latest router feature
-root.render(<RouterProvider router={appRouter}/>)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+root.render(<RouterProvider router={appRouter} />);
 
 //React Element using JSX
 
