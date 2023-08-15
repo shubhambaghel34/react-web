@@ -87,3 +87,7 @@ UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(
         <h5>{costForTwo}</h5>
         {/* <h5>{deliveryTime} minutes</h5> */}
       </div> -->
+
+11.Controlled and uncontrolled Component
+- Parent componetn manages the state for child
+- 
