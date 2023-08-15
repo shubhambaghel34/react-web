@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom/client";
 import RestaurantsCard, {
   withMenuPromoted,
@@ -8,6 +8,7 @@ import { API_URL } from "../../utils/constant";
 import Shimmer from "../Shimmer/Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext/UserContext";
 
 const Body = () => {
   const [resturants, setResturants] = useState([]);
@@ -16,6 +17,8 @@ const Body = () => {
 
   const resPromotedCard = withMenuPromoted(RestaurantsCard);
   console.log("body rendered");
+
+  const { setSiteName, loggedInuser } = useContext(UserContext);
 
   //will call callback function after main/body component render
   useEffect(() => {
@@ -99,6 +102,14 @@ const Body = () => {
           >
             Top Rated Resturant
           </button>
+        </div>
+        <div className="flex items-center m-4 p-4">
+          <label> Username: </label>
+          <input
+            className="border border-black"
+            value={loggedInuser}
+            onChange={(e) => setSiteName(e.target.value)}
+          />
         </div>
       </div>
       <div className="grid grid-cols-5 gap-0">
