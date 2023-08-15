@@ -71,8 +71,7 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
         a.Load component on demand and distrubute code  
         pass Fallaback value if needed
         b.dynamic import
-
-9.Tailwindcss
+9. Tailwindcss
          a.tailwind config
          b.postcss- will help to write/convert/transpile css in js
 
@@ -90,10 +89,10 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
         {/* <h5>{deliveryTime} minutes</h5> */}
       </div> -->
 
-11.Controlled and unControlled Component
+11. Controlled and unControlled Component
   - Parent component manages the state for child
 
-12.Context API
+12. Context API
 - createContext is use to crate context
 - useContext hook provides ability to access created context in case of functional component
 - context.consumer is used in case of class component with callback function which has access
