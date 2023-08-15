@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { LOGO_URL } from "../../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext/UserContext";
 
 const Header = () => {
   const [btnName, setbtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const userData = useContext(UserContext);
+
   return (
     <div className="flex justify-between bg-custom-blue shadow-lg mb-1 mt-0  border border-gray-300 hover:border-purple-500 transition duration-300 px-4 py-2 rounded-md ">
       <div className="flex items-center">

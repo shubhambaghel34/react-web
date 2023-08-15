@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./styles.css";
 import Header from "./components/Header/Header";
@@ -10,16 +10,28 @@ import Error from "./components/Error/Error";
 import Cart from "./components/Cart/Cart";
 import RestaurantMenu from "./components/ResturantMenu/ResturantMenu";
 import Shimmer from "./components/Shimmer/Shimmer";
+import UserContext from "./utils/UserContext/UserContext";
 // import Grocery from "./components/Grocery/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery/Grocery"));
 
 const AppLayout = () => {
+  const [siteName, setSiteName] = useState("");
+
+  useEffect(() => {
+    const data = {
+      site: "Swiggy",
+    };
+    setSiteName(data.site);
+  }, []);
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ loggedInUser: siteName, setSiteName }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 

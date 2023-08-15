@@ -33,50 +33,52 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 
 2. React--> reconciliation Algo(ReactFiber) 
 
-UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(body)=>Object==> compares object of two DOM and update actual DOM
+   UI=> React creates V-DOM(represnetation of actual DOM) => Actual react 
+   elements(body)=>Object==> compares object of two DOM and update actual DOM
 
 3. Shimmer UI
 
 4. whenver changes in state variable, react will trigger reconciallation cycle
 
 5. usEffect
- a.it will call whne every component is render if dpendency array is noot provided
- b.it will render once if we pass dependency array
- c.if dependency array has value then it will render only if that value changes  
+  a.it will call whne every component is render if dpendency array is noot provided
+  b.it will render once if we pass dependency array
+  c.if dependency array has value then it will render only if that value changes  
 
 6. React-Router
- a.createBrowserrouter is configration and RouterProvider is component imported/written by DOM which need to pass in render
-   Ex. root.render(<RouterProvider router={appRouter}/>) where appRouter is configuration of different path with components
-   as in createBrowserRouter([{path,element},{path,element}])
- b.`errorelement` in createBrowserrouter is utilize to define wildcard/random entry in path  
- c.Outlet is provided where all children can be push internally by react-DOM
- d.Link and with 'to' where it will  replace anchor tag  and refreshes the components
- e.Client Side Routing and Server Side Routing
+  a.createBrowserrouter is configration and RouterProvider is component imported/written by DOM which need to pass in render
+    Ex. root.render(<RouterProvider router={appRouter}/>) where appRouter is configuration of different path with components
+    as in createBrowserRouter([{path,element},{path,element}])
+  b.`errorelement` in createBrowserrouter is utilize to define wildcard/random entry in path  
+  c.Outlet is provided where all children can be push internally by react-DOM
+  d.Link and with 'to' where it will  replace anchor tag  and refreshes the components
+  e.Client Side Routing and Server Side Routing
 
 7. Class COMPONENT LifeCycle
 
- a.CONSTRUCTOR->RENDER->ComponentDidmount
+   a.CONSTRUCTOR->RENDER->ComponentDidmount
 
- b.CONSTRUCTOR (parent)->RENDER (parent)->Constructor(child)->Render(child)->ComponentDidmount(Child)->ComponentDidMount(Parent)
+   b.CONSTRUCTOR (parent)->RENDER (parent)->Constructor(child)->Render(child)- 
+   >ComponentDidmount(Child)->ComponentDidMount(Parent)
 
- c.Child and Parent components
+   c.Child and Parent components
 
-  i.Render phase->Constructor->Render
+      i.Render phase->Constructor->Render
  
-  ii.Commit phase->Update DOM->componentDidMount 
+      ii.Commit phase->Update DOM->componentDidMount 
 
 8. Suspense/lazy
- a.Load component on demand and distrubute code  
- pass Fallaback value if needed
- b.dynamic import
+  a.Load component on demand and distrubute code  
+  pass Fallaback value if needed
+  b.dynamic import
 
-9. Tailwindcss
- a.tailwind config
- b.postcss- will help to write/convert/transpile css in js
+9.Tailwindcss
+   a.tailwind config
+   b.postcss- will help to write/convert/transpile css in js
 
 10. HOC
- a.takes Component as input->return enhance component
- b.
+   a.takes Component as input->return enhance component
+ 
 
 
   <!-- <div className=" m-4 p-4 w-[350px] rounded-lg bg-slate-200">
@@ -88,6 +90,14 @@ UI=> React creates V-DOM(represnetation of actual DOM) => Actual react elements(
         {/* <h5>{deliveryTime} minutes</h5> */}
       </div> -->
 
-11.Controlled and uncontrolled Component
-- Parent componetn manages the state for child
-- 
+11.Controlled and unControlled Component
+  - Parent component manages the state for child
+
+12.Context API
+- createContext is use to crate context
+- useContext hook provides ability to access created context in case of functional component
+- context.consumer is used in case of class component with callback function which has access
+- It uses consumer where it needs to consume and provider can be pass at root level or specific component
+- To update value need to pass as value in context.provider at root level or specific component
+- we can pass function to update any state value, use useContext where it will gives value from app or root level where its
+  defined 
