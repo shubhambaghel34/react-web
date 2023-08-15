@@ -59,22 +59,22 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
    a.CONSTRUCTOR->RENDER->ComponentDidmount
 
    b.CONSTRUCTOR (parent)->RENDER (parent)->Constructor(child)->Render(child)- 
-   >ComponentDidmount(Child)->ComponentDidMount(Parent)
+            >ComponentDidmount(Child)->ComponentDidMount(Parent)
 
    c.Child and Parent components
 
-      i.Render phase->Constructor->Render
+            i.Render phase->Constructor->Render
  
-      ii.Commit phase->Update DOM->componentDidMount 
+            ii.Commit phase->Update DOM->componentDidMount 
 
 8. Suspense/lazy
-  a.Load component on demand and distrubute code  
-  pass Fallaback value if needed
-  b.dynamic import
+        a.Load component on demand and distrubute code  
+        pass Fallaback value if needed
+        b.dynamic import
 
 9.Tailwindcss
-   a.tailwind config
-   b.postcss- will help to write/convert/transpile css in js
+         a.tailwind config
+         b.postcss- will help to write/convert/transpile css in js
 
 10. HOC
    a.takes Component as input->return enhance component
