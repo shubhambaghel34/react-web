@@ -101,3 +101,7 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 - To update value need to pass as value in context.provider at root level or specific component
 - we can pass function to update any state value, use useContext where it will gives value from app or root level where its
   defined 
+
+13.Redux
+-Slice(pieces of object stored in Redux store)
+-User interaction-->Button->Dispatch action(Action type="")-->calls function(Reducer)-->modifies the cart slice of Redux store-->selector(which read the modified store data and modify the data on UI this proecess kown as `Subscribing to store``)->Render
