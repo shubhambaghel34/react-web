@@ -30,11 +30,12 @@ const RestaurantMenu = () => {
     );
   // console.log("categorises", categories);
 
+  ////setShowIndex is passed as function
   return (
     <div className="text-center">
       <h1 className="font-bold my-4 text-2xl">{name}</h1>
       <p className="font-bold text-lg">{cuisines.join(",")}</p>
-      //setShowIndex is passed as function
+
       {categories.map((category, idx) => (
         <div>
           <RestaurantCategory
