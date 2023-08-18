@@ -4,11 +4,16 @@ import { LOGO_URL } from "../../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import UserContext from "../../utils/UserContext/UserContext";
-
+import carts from "../../../resources/carts.png";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [btnName, setbtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const userData = useContext(UserContext);
+
+  //Subscribing to store using Selector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log("cart", cartItems);
 
   return (
     <div className="flex justify-between bg-custom-blue shadow-lg mb-1 mt-0  border border-gray-300 hover:border-purple-500 transition duration-300 px-4 py-2 rounded-md ">
@@ -61,7 +66,8 @@ const Header = () => {
               href="/cart"
               className="font-semibold text-xl text-white  hover:text-gray-300 transition duration-300 ease-in-out"
             >
-              Cart
+              {cartItems.length}
+              <img src={carts} className="w-8" />
             </a>
           </li>
         </ul>
