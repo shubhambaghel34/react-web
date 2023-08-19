@@ -59,22 +59,21 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
    a.CONSTRUCTOR->RENDER->ComponentDidmount
 
    b.CONSTRUCTOR (parent)->RENDER (parent)->Constructor(child)->Render(child)- 
-   >ComponentDidmount(Child)->ComponentDidMount(Parent)
+            >ComponentDidmount(Child)->ComponentDidMount(Parent)
 
    c.Child and Parent components
 
-      i.Render phase->Constructor->Render
+            i.Render phase->Constructor->Render
  
-      ii.Commit phase->Update DOM->componentDidMount 
+            ii.Commit phase->Update DOM->componentDidMount 
 
 8. Suspense/lazy
-  a.Load component on demand and distrubute code  
-  pass Fallaback value if needed
-  b.dynamic import
-
-9.Tailwindcss
-   a.tailwind config
-   b.postcss- will help to write/convert/transpile css in js
+        a.Load component on demand and distrubute code  
+        pass Fallaback value if needed
+        b.dynamic import
+9. Tailwindcss
+         a.tailwind config
+         b.postcss- will help to write/convert/transpile css in js
 
 10. HOC
    a.takes Component as input->return enhance component
@@ -90,10 +89,10 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
         {/* <h5>{deliveryTime} minutes</h5> */}
       </div> -->
 
-11.Controlled and unControlled Component
+11. Controlled and unControlled Component
   - Parent component manages the state for child
 
-12.Context API
+12. Context API
 - createContext is use to crate context
 - useContext hook provides ability to access created context in case of functional component
 - context.consumer is used in case of class component with callback function which has access
@@ -101,6 +100,7 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 - To update value need to pass as value in context.provider at root level or specific component
 - we can pass function to update any state value, use useContext where it will gives value from app or root level where its
   defined 
+
 
 13.Redux
 -Slice(pieces of object stored in Redux store)
@@ -114,3 +114,4 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 -Dispatch action
 -Reducers
 -Selector which will help to read store/modified slice/object
+=======
