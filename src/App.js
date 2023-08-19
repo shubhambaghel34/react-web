@@ -58,6 +58,10 @@ const appRouter = createBrowserRouter([
         element: <Contact />,
       },
       {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
         path: "/grocery",
         element: (
           <Suspense
@@ -71,10 +75,7 @@ const appRouter = createBrowserRouter([
           </Suspense>
         ),
       },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
+
       /**id of restaurant */
       {
         path: "/restaurants/:resId",

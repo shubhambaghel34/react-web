@@ -13,7 +13,7 @@ const Header = () => {
 
   //Subscribing to store using Selector
   const cartItems = useSelector((store) => store.cart.items);
-  console.log("cart", cartItems);
+  console.log("cart on header", cartItems);
 
   return (
     <div className="flex justify-between bg-custom-blue shadow-lg mb-1 mt-0  border border-gray-300 hover:border-purple-500 transition duration-300 px-4 py-2 rounded-md ">
@@ -23,52 +23,38 @@ const Header = () => {
       <div className="flex items-center  p-0 m-1">
         <ul className="flex space-x-4">
           <li>
-            <p className="text-white text-xl font-semibold">
-              Online status:{" "}
-              <span className="">{onlineStatus ? "🟢" : "🔴"}</span>
-            </p>
-            {/* <span class="inline-block w-4 h-4 rounded-full {{onlineStatus ? 'bg-green-500' : 'bg-gray-400'}}"></span> */}
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a
-              href="/"
-              className="font-semibold text-xl text-white hover:text-gray-300 transition duration-300 ease-in-out"
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
+            <Link to="/about">About us</Link>
+            {/* <a
               href="/about"
               class="font-semibold text-xl text-white hover:text-gray-300 transition duration-300 ease-in-out"
             >
               About us
-            </a>
+            </a> */}
           </li>
           <li>
-            <a
+            <Link to="/contact">Contact us</Link>
+            {/* <a
               href="/contact"
               className="font-semibold text-xl text-white hover:text-gray-300 transition duration-300 ease-in-out"
             >
               Contact us
-            </a>
-          </li>
-          <li>
-            <a
-              href="/grocery"
-              className="font-semibold text-xl text-white hover:text-gray-300 transition duration-300 ease-in-out"
-            >
-              Grocery
-            </a>
+            </a> */}
           </li>
           <li class="ml-4">
-            <a
-              href="/cart"
-              className="font-semibold text-xl text-white  hover:text-gray-300 transition duration-300 ease-in-out"
-            >
+            <Link to="/cart">
+              {" "}
               {cartItems.length}
               <img src={carts} className="w-8" />
-            </a>
+            </Link>
+            {/* <a
+              href="/cart"
+              className="emn-semibold text-xl text-white  hover:text-gray-300 transition duration-300 ease-in-out"
+            > */}
+
+            {/* </a> */}
           </li>
         </ul>
         <button

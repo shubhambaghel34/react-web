@@ -3,12 +3,13 @@ import { CDN_URL } from "../../utils/constant";
 import { addItems } from "../../utils/Store/cartSlice";
 
 const RestaurantItemlist = ({ items }) => {
-  //  console.log(items);
+  console.log(items);
   const dispatch = useDispatch();
 
-  const handleaddItem = () => {
+  const handleaddItem = (item) => {
+    console.log("items....", item);
     //Dispatch action which goes with payload- redux will create paylaod and pass in slice
-    dispatch(addItems("Dosa"));
+    dispatch(addItems(item));
   };
 
   return (
@@ -35,7 +36,7 @@ const RestaurantItemlist = ({ items }) => {
             />
             <button
               className="p-2 bg-black shadow-lg absolute ml-9 -mt-8 rounded-lg text-white text-center"
-              onClick={handleaddItem}
+              onClick={() => handleaddItem(item)}
             >
               ADD +
             </button>

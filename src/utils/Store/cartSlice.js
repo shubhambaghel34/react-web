@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: ["burger,pizza"],
+  items: [],
 };
 
 const cartSlice = createSlice({
@@ -13,14 +13,15 @@ const cartSlice = createSlice({
     addItems: (state, action) => {
       //mutating existing state
       state.items.push(action.payload);
+      console.log("data is pushed and stored");
     },
     removeItems: (state) => {
       state.items.pop();
     },
 
-    clearItems: (state) => {
-      state.items.length = 0;
-    },
+    // clearItems: (state) => {
+    //   state.items.length = 0;
+    // },
   },
 });
 
