@@ -1,15 +1,15 @@
 import { useDispatch } from "react-redux";
 import { CDN_URL } from "../../utils/constant";
-import { addItems } from "../../utils/Store/cartSlice";
+import { addItem } from "../../utils/Store/cartSlice";
 
 const RestaurantItemlist = ({ items }) => {
-  console.log(items);
+  console.log("list here...", items);
   const dispatch = useDispatch();
 
   const handleaddItem = (item) => {
-    console.log("items....", item);
+    //console.log("items....", item);
     //Dispatch action which goes with payload- redux will create paylaod and pass in slice
-    dispatch(addItems(item));
+    dispatch(addItem(item));
   };
 
   return (
