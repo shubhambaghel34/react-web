@@ -115,3 +115,6 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 - Reducers
 -Selector which will help to read store/modified slice/object
 
+--app contains Reducer and slices contains multiple reducers
+=======
+=======

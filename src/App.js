@@ -11,7 +11,7 @@ import Cart from "./components/Cart/Cart";
 import RestaurantMenu from "./components/ResturantMenu/ResturantMenu";
 import Shimmer from "./components/Shimmer/Shimmer";
 import UserContext from "./utils/UserContext/UserContext";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import appStore from "./utils/appStore";
 // import Grocery from "./components/Grocery/Grocery";
 
@@ -30,7 +30,7 @@ const AppLayout = () => {
   return (
     <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: siteName, setSiteName }}>
-        <div className="app">
+        <div>
           <Header />
           <Outlet />
         </div>

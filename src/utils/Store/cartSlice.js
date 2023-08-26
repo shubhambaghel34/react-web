@@ -1,30 +1,34 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
-const initialState = {
-  items: [],
-};
+// const initialState = {
+//   itemsData: [],
+// };
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState,
-  // this is reducer function which modifies the slice of store
+  initialState: {
+    items: [],
+  },
   reducers: {
-    //this will have state and action from dispatch
-    addItems: (state, action) => {
-      //mutating existing state
+    addItem: (state, action) => {
+      // Redux Toolkit uses immer BTS
+
+      //Dont mutuate state
       state.items.push(action.payload);
-      console.log("data is pushed and stored");
     },
-    removeItems: (state) => {
+    removeItem: (state, action) => {
       state.items.pop();
     },
+    //originalState = {items: ["pizza"]}
+    clearCart: (state, action) => {
+      //RTK - either Mutate the existing  state or return a new State
+      // state.items.length = 0; // originalState = []
 
-    // clearItems: (state) => {
-    //   state.items.length = 0;
-    // },
+      return { items: [] }; // this new object will be replaced inside originalState = { items: [] }
+    },
   },
 });
 
-export const { addItems, removeItems, clearItems } = cartSlice.actions;
+export const { addItem, removeItem, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
