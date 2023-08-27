@@ -107,12 +107,14 @@ URL: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
 -User interaction-->Button->Dispatch action(Action type="")-->calls function(Reducer)-->modifies the cart slice of Redux store-->selector(which read the modified store data and modify the data on UI this proecess kown as `Subscribing to store``)->Render
 
 # React Redux
--Install reduxtoolkit and react-redux
--Build own store (create a store using configureStore which holds slices/objects ex. cartSlice)
--Connect store to our app(Provider is needed for APP along with store as props) 
--Create cart slice ( create a slice with createSlice from RDK)
--Dispatch action
--Reducers
+- Install reduxtoolkit and react-redux
+- Build own store (create a store using configureStore which holds slices/objects ex. cartSlice)
+- Connect store to our app(Provider is needed for APP along with store as props) 
+- Create cart slice ( create a slice with createSlice from RDK)
+- Dispatch action
+- Reducers
 -Selector which will help to read store/modified slice/object
+
 --app contains Reducer and slices contains multiple reducers
+=======
 =======
