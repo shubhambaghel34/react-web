@@ -2,11 +2,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../../utils/Store/themeSlice";
 const Contact = () => {
   const dispatch = useDispatch();
+
+  //subscribe to theme slice
   const theme = useSelector((state) => state.theme.theme);
+
+  //handlechange for theme
   const changeTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     dispatch(setTheme(newTheme));
   };
+
   return (
     <div
       className={`min-h-screen ${
