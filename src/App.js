@@ -13,6 +13,8 @@ import Shimmer from "./components/Shimmer/Shimmer";
 import UserContext from "./utils/UserContext/UserContext";
 import { Provider, useSelector } from "react-redux";
 import appStore from "./utils/appStore";
+import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+import { productsApi } from "./utils/Store/apiSlice";
 // import Grocery from "./components/Grocery/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery/Grocery"));
@@ -29,12 +31,14 @@ const AppLayout = () => {
 
   return (
     <Provider store={appStore}>
-      <UserContext.Provider value={{ loggedInUser: siteName, setSiteName }}>
-        <div>
-          <Header />
-          <Outlet />
-        </div>
-      </UserContext.Provider>
+      <ApiProvider api={productsApi}>
+        <UserContext.Provider value={{ loggedInUser: siteName, setSiteName }}>
+          <div>
+            <Header />
+            <Outlet />
+          </div>
+        </UserContext.Provider>
+      </ApiProvider>
     </Provider>
   );
 };

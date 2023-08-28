@@ -1,9 +1,9 @@
+import { useGetAllProducts } from "../../utils/Store/apiSlice";
+
 const Grocery = () => {
-  return (
-    <div>
-      Grocery onlne store,and we have a lot of child component inside this
-      webpage
-    </div>
-  );
+  const { data } = useGetAllProducts();
+  console.log("data", data);
+
+  return <div>Data</div>;
 };
 export default Grocery;
