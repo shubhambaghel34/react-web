@@ -23,6 +23,9 @@ const Header = () => {
       <div className="flex items-center  p-0 m-1">
         <ul className="flex space-x-4">
           <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
             <Link to="/">Home</Link>
           </li>
           <li>

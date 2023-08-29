@@ -1,8 +1,8 @@
-import { useGetAllProducts } from "../../utils/Store/apiSlice";
+import { useGetAllProductsQuery } from "../../utils/Store/apiSlice";
 
 const Grocery = () => {
-  const { data } = useGetAllProducts();
-  console.log("data", data);
+  // const { data } = useGetAllProductsQuery();
+  // console.log("data", data);
 
   return <div>Data</div>;
 };
