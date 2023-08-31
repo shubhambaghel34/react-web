@@ -16,7 +16,6 @@ import appStore from "./utils/appStore";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { productsApi } from "./utils/Store/apiSlice";
 import Data from "./components/Blog/data";
-// import Grocery from "./components/Grocery/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery/Grocery"));
 
